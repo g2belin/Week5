@@ -1,0 +1,77 @@
+under Users class, there is 'has_many' relationship with llama
+therefore, you can use user.llamas to access 
+
+joe.llamas.create({name: "Macho Picchu", age: 5, quality: "Low", gender: "Male"})
+
+use joe.llamas get all the collection/array of llamas related to joe
+if we only want first one, do joe.llamas.first.name
+
+
+HTTP, Sinatra, and you
+
+HTTP comment to send to the server
+POST - create
+GET - read
+PUT - update
+DELETE - destroy
+
+Sinatra is a mircro framework, used for serving up dynamic web page (control flow of request)
+
+get request for '/'ERB stands for embedded ruby
+
+'/' is like the root or home page at current directory
+
+
+shotgun -p 3000 -o 0.0.0.0
+
+start up the server on the computer
+sinatra is listening
+
+
+localhost:3000
+
+open up app folder's action.rb
+
+
+get '/' do 
+  erb :index
+end
+
+this will render the index in views/index.erb
+
+open up index.erb
+will have <h1> sadfa </h1> <ul> <li> </li> </ul>
+
+
+<% if @ user.admin %>
+  <button id = "delete"> Delete Post </button>
+<% end %>
+
+<p> ID: <%= @user.id %> </p>
+
+
+open up index.erb
+
+<% [5,6,7,8,9. each do |number| %>
+  <% if number == 7 %>
+    <li> Special Item <%= number %></li>
+  <% else %>    
+    <li> Item <%= number %></li>
+<% end %>
+
+<% @users.each do |user| %>
+  <p> username: <%=user.username %> </p>
+  <p> email: <%=user.email %> </p>
+<% end %>
+
+
+
+in the layout.erb fil,
+
+you have <div class = "container">
+<%= yield %>
+</div>
+
+yield will render the content of the index.erb
+
+=============================
